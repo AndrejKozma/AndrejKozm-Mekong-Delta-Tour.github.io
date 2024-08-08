@@ -1,18 +1,22 @@
 * {
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 body {
   font-family: 'Source Sans 3', Arial, Helvetica, sans-serif;
-  padding: 35px 60px;
   box-sizing: border-box;
 }
 
 .container {
   display: flex;
+  padding: 35px 60px;
+  flex-shrink: 1;
 }
 
 .wraper1 {
   display: flex;
+  /* border: red 1px solid; */
 }
 
 .sidebar {
@@ -32,7 +36,7 @@ body {
 
 .dwnBtn {
   position: relative;
-  top: 813px;
+  top: 857px;
   left: 0px;
   box-shadow: 2px 1px 20px 1px #00000029;
   border-radius: 100%;
@@ -93,6 +97,16 @@ body {
   opacity: 1;
 }
 
+.facebook {
+  position: absolute;
+  left: 8px;
+}
+
+.share {
+  position: absolute;
+  left: 10px;
+}
+
 .twitter {
   position: absolute;
   left: 13px;
@@ -115,11 +129,12 @@ body {
 
 .hero-img {
   z-index: -100;
+  object-position: top;
 }
 
 .pricing {
   position: absolute;
-  top: 68px;
+  top: 168px;
   left: 692px;
   width: 298px;
   height: 141px;
@@ -136,6 +151,7 @@ body {
 
 .duration {
   font-size: 38px;
+  width: 170px;
   color: #0d9206;
   border-bottom: 4px solid #ff8800;
   font-weight: bold;
@@ -150,15 +166,22 @@ body {
 .wraper2 {
   display: flex;
   flex-direction: column;
-  width: 544px;
-  height: 100%;
+  padding-top: 160px;
+  flex-basis: 909px;
+  /* border: 2px solid blue; */
+  flex-shrink: 1;
+}
+
+.section2 {
 }
 
 .box1 {
+  padding-bottom: 68px;
   display: flex;
   font-size: 2em;
   padding-left: 36.5px;
   font-weight: bolder;
+  /* border: 1px brown solid; */
 }
 
 .shadow {
@@ -174,14 +197,15 @@ body {
   color: #7d7d7d;
   font-size: 28px;
   border-left: 4px solid #0d9206;
-  flex: 1;
   padding-left: 36.5px;
   margin-bottom: 68px;
+  width: 700px;
+  /* border: 1px brown solid; */
 }
 
 .book-now {
-  width: 203px;
-  height: 61px;
+  margin-top: 39px;
+  padding: 12px 44px;
   background: #ff8800;
   color: #ffffff;
   text-align: center;
@@ -198,10 +222,23 @@ body {
 .box3 {
   display: flex;
   position: relative;
+  overflow: hidden;
+  width: 909px;
 }
-.more-photos {
-  height: 190px;
+
+.picture-box {
+  display: flex;
+  gap: 1rem;
+}
+
+.box3-img {
   width: 365px;
+  border-radius: 20px;
+  transition: 0.3s ease-out;
+}
+
+.box3-img:hover {
+  scale: 1.1;
 }
 
 .morephotos {
@@ -251,7 +288,44 @@ body {
 
 @media (max-width: 768px) {
   .container {
-    display: flex;
     flex-direction: column;
+    padding: 20px;
+  }
+
+  .pricing {
+    position: static;
+    margin: 20px 0;
+    width: auto;
+    left: auto;
+    top: auto;
+  }
+
+  .wraper2 {
+    padding-top: 60px;
+    flex-basis: auto;
+    /* width: 100%; */
+  }
+
+
+
+  .box3 {
+    flex-direction: column;
+    /* width: 100%; */
+  }
+
+  .box3-img {
+    /* width: 100%; */
+  }
+
+  .morephotos {
+    top: auto;
+    left: auto;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .photoBtn, .rightarrow {
+    width: 100%;
   }
 }
